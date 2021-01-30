@@ -1,0 +1,23 @@
+sms:
+  path: '/sms/register'
+  defaults:
+    _controller:  \Drupal\sms\Controller\SmsController::register
+    _title: 'Registration'
+  requirements:
+    _permission: 'access content'
+
+sms.form:
+ path: '/sms-form'
+ defaults:
+   _title: 'Application form'
+   _form: '\Drupal\sms\Form\SmsForm'
+ requirements:
+   _permission: 'access content'  
+
+sms.verification:
+  path: '/sms/verification'
+  defaults:
+    _controller:  \Drupal\sms\Controller\SmsController::verification
+    _title: 'Verification of your account using verification code'
+  requirements:
+    _permission: 'access content'

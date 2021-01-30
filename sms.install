@@ -1,0 +1,55 @@
+<?php
+function sms_schema() {
+
+  $schema['sms'] = array(
+    'description' => 'To verify the account details with phone number',
+    'fields' => array(
+      'sid' => array(
+       'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'description' => 'The booking id.',        
+      ),
+      'name' => array(
+        'type' => 'varchar',
+        'length' => '255',
+        'description' => 'Customer Name',
+      ),
+       'email' => array(
+        'type' => 'varchar',
+        'length' => '255',
+        'description' => 'Email Address',
+      ),
+      'mobile' => array(
+        'type' => 'varchar',
+        'length' => '255',
+        'description' => 'Customer Number',
+      ),
+       'verification_code' => array(
+        'type' => 'varchar',
+        'length' => '255',
+        'description' => 'verification Code',
+      ),
+      
+      'sdate' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,        
+       
+      ),
+      
+      'status' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,        
+        'description' => 'The status of the verified(0 -> Not Verified, 1 -> Verified)',
+      ),
+      
+    ),
+    'primary key' => array('sid'),
+  );
+
+  return $schema;
+
+}
+

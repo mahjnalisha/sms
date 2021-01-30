@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * @file
+ * Contains sms.module..
+ */
+
+
+/**
+ * Implements hook_theme()
+ * @return mixed
+ */
+function sms_theme() {
+  $theme['sms_page'] = [
+    'variables' => [
+    	 'name' => NULL,
+         'form' => NULL,
+         'base_path' =>base_path()
+            ],
+    'template' => 'sms-verify',
+
+  ];
+
+  return $theme;
+}
